@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - By Vikas</title>
+
+    <!-- External Stylesheets and Scripts -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+        <div class="loading-text">"MausamMate is tuning into nature... One sec!"</div>
+    </div>
+
+    <!-- App Title -->
+    <h1 class="app-title">MausamMate</h1>
+
+    <div class="container">
+        <!-- Left Section: Weather Input & Cricket Scores -->
+        <div class="weather-input">
+            <!-- Search Section -->
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="userLocation" 
+                    placeholder="Search for places..." 
+                />
+                <select class="converter" id="converter">
+                    <option>°F</option>
+                    <option>°C</option>
+                </select>
+                <i class="fa fa-search" id="searchButton"></i> 
+            </div>
+
+            <!-- Current Weather Display -->
+            <div id="weatherIcon" class="weatherIcon"></div> 
+            <h2 id="temperature" class="temperature">--°C</h2>
+            <div id="feelsLike" class="feelsLike">Feels like --°C</div>
+            <div id="description" class="description"></div>  
+            <div id="date" class="date">----</div>
+            <div id="city">----</div>
+
+            <!-- Cricket Scores Section -->
+            <h2 class="heading">Sports Special</h2>
+            <div id="cricketScores" class="cricket-widget">
+                <p>Fetching latest match updates...</p>
+            </div>
+        </div>
+
+        <!-- Right Section: Weather Output -->
+        <div class="weather-output">
+            <!-- Today's Highlights Section -->
+            <h2 class="heading">Today's Highlights</h2>
+            <hr />
+
+            <div class="Highlights">
+                <!-- Humidity -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-water"></i>
+                    <h2>Humidity</h2>
+                    <h1 id="HValue">--%</h1>
+                </div>
+
+                <!-- Cloud Cover -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h2>Cloud Cover</h2>
+                    <h1 id="CValue">--%</h1>
+                </div>
+
+                <!-- Wind Speed -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-wind"></i>
+                    <h2>Wind Speed</h2>
+                    <h1 id="WValue">-- m/s</h1>
+                </div>
+
+                <!-- Sunrise & Sunset -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-sun"></i> 
+                    <h2>Sunrise & Sunset</h2>
+                    <p>Sunrise: <span id="SRValue">--:-- AM</span></p>
+                    <p>Sunset: <span id="SSValue">--:-- PM</span></p>
+                </div>
+
+                <!-- Air Quality Index -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-smog"></i> 
+                    <h2>Air Quality Index (AQI)</h2>
+                    <h1 id="AQIValue">--</h1>
+                </div>
+
+                <!-- Pressure -->
+                <div class="highlight-box">
+                    <i class="fa-solid fa-gauge"></i> 
+                    <h2>Pressure</h2>
+                    <h1 id="PValue">---- hPa</h1>
+                </div>
+            </div>
+            
+            <!-- Weather Graph Section -->
+            <h2 class="heading">Weather Trends</h2>
+            <div class="charts-container">
+                <div class="chart-header">
+                    <h3>Next 24 Hours</h3>
+                    <div class="chart-controls">
+                        <button class="chart-btn active" data-chart="temperature">Temperature</button>
+                        <button class="chart-btn" data-chart="rainfall">Rainfall</button>
+                        <button class="chart-btn" data-chart="humidity">Humidity</button>
+                    </div>
+                </div>
+                
+                <div id="weatherGraphs" class="chart-display">
+                    <!-- Charts will be dynamically inserted here -->
+                </div>
+                
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-color temp-color"></span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color rain-color"></span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color humidity-color"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Forecast Section -->
+            <h2 class="heading">This Week</h2>
+            <div class="Forecast">
+                <!-- JavaScript will insert weekly forecast here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load script.js as a module -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
