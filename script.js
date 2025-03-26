@@ -5,11 +5,22 @@
 // ========================
 
 // Use backend proxy endpoints (no API keys needed in frontend)
-const WEATHER_API = "/api/weather";
-const FORECAST_API = "/api/forecast";
-const AQI_API = "/api/air-quality";
-const CRICKET_API = "/api/cricket";
-const SIMPLE_CRICKET_API = "/api/news";
+// Use backend proxy endpoints (no API keys needed in frontend)
+const WEATHER_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000/api/weather'
+    : '/api/weather';
+const FORECAST_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000/api/forecast'
+    : '/api/forecast';
+const AQI_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000/api/air-quality'
+    : '/api/air-quality';
+const CRICKET_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000/api/cricket'
+    : '/api/cricket';
+const SIMPLE_CRICKET_API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:3000/api/news'
+    : '/api/news';
 
 // DOM Elements
 const userLocation = document.getElementById("userLocation");
